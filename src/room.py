@@ -10,5 +10,12 @@ class Room:
         self.s_to = s_to
         self.e_to = e_to
         self.w_to = w_to
+    
     def __str__(self):
         return f'You are in the room : {self.name} \nThere are these items from within : {self.items} \nDescription : {self.description}'
+
+    def remove_items(self,index):
+        self.items.remove(self.items[index-1])
+
+    def dropped_item(self, item):
+        self.items.append(item)
